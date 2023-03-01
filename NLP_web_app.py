@@ -10,7 +10,7 @@ import pandas as pd
 import pickle
 import streamlit as st
 
-loaded_model = pickle.load(open("E:/Userfiles/Desktop/Python/project/Sentiment1.sav",'rb'))
+loaded_model = pickle.load(open("https://github.com/SundaramAyyappan/NLP/blob/main/Sentiment1.sav",'rb'))
 
 
 st.title('emotion Prediction Web App')
