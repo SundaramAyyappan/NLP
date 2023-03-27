@@ -2,7 +2,7 @@
 """
 Created on Mon Mar  6 12:44:35 2023
 
-@author: Jeevika
+@author: Sundar
 """
 
 import numpy as np
@@ -10,6 +10,7 @@ import pickle
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 import streamlit as st 
+import docx2txt
 
 
 from PIL import Image
@@ -58,16 +59,19 @@ def main():
       
     # the following lines create text boxes in which the user can enter 
     # the data required to make the prediction
-
-    Skills = st.text_input("Skills", "Type Here")
-
+    
+    
+    st.subheader("DocumentFiles")
+    Skills = st.file_uploader("Upload Document", type = ["pdf","docx","doc","txt"])      
+ 
+       
     result =""
       
     # the below line ensures that when the button called 'Predict' is clicked, 
     # the prediction function defined above is called to make the prediction 
     # and store it in the variable result
 
-    if st.button("Predict"):
+    if st.button("Process"):
         result = prediction(Skills)
     st.success('The output is {}'.format(result))
 
