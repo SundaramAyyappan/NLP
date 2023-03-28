@@ -62,7 +62,10 @@ def main():
     
     
     st.subheader("DocumentFiles")
-    Skills = st.file_uploader("Upload Document", type = ["pdf","docx","doc","txt"])      
+    Skills = st.file_uploader("Upload Document", type = ["pdf","docx","doc","txt"]) 
+
+    raw_text = Skills.read()
+    
  
        
     result =""
@@ -72,7 +75,7 @@ def main():
     # and store it in the variable result
 
     if st.button("Process"):
-        result = prediction(Skills)
+        result = prediction(raw_text)
     st.success('The output is {}'.format(result))
 
 if __name__=='__main__':
