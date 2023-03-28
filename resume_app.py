@@ -10,7 +10,7 @@ import pickle
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 import streamlit as st 
-pip install docx2txt
+
 import docx2txt
 
 
